@@ -1,0 +1,29 @@
+//count number of triplets whose sum is equal to the value x
+import java.util.Scanner;
+public class hj{
+   static int arraypairs(int[] arr,int target,int ans){
+     int n=arr.length;
+      for(int i=0;i<n;i++){
+         for(int j=i+1;j<n;j++){
+            for(int k=j+1;k<n;k++){
+            if(arr[i]+arr[j]+arr[k]==target){
+               ans++;
+            }
+            }
+         }
+      }return ans;
+   }
+   public static void main(String[] args) {
+      Scanner sc=new  Scanner(System.in);
+      System.out.println("enter array size");
+      int n=sc.nextInt();
+     int ans=0;
+     int target=12;
+     int[] arr=new int[n];
+     System.out.println("enter array "+n+" elements");
+      for(int i=0;i<n;i++){
+         arr[i]=sc.nextInt();
+      }
+     System.out.println("the number of pair is: "+arraypairs(arr,target,ans));
+   }
+}
